@@ -61,43 +61,36 @@ public class GameActivity extends AppCompatActivity {
         }
 
     }
+
     public void onClickButtonFirst(View view) {
+        if (timer != null) {
+            timer.cancel();
+        }
         TextView textFirst = findViewById(R.id.text_first);
         // рандом
-          int currentNumber = random.nextInt(20) + 1;
-          textFirst.setText(String.valueOf(currentNumber));
+        int currentNumber = random.nextInt(20) + 1;
+        textFirst.setText(String.valueOf(currentNumber));
 
-          // проверка на то, одинаковое ли предыдущее число
+        // проверка на то, одинаковое ли предыдущее число
         if (currentNumber == previousNumber) {
-            if (timer != null) {
-                timer.cancel();
-            }
-            if (timer2 != null) {
-                timer2.cancel();
-            }
-        int id = 1;
-        Intent intent = new Intent(GameActivity.this, WinActivity.class);
-        intent.putExtra("id", id);
-        startActivity(intent);
+            int id = 1;
+            Intent intent = new Intent(GameActivity.this, WinActivity.class);
+            intent.putExtra("id", id);
+            startActivity(intent);
         } else {
-        previousNumber = currentNumber;
+            previousNumber = currentNumber;
         }
 
         mTimerText = findViewById(R.id.mTimerText);
 
         // условие при котором старый таймер будет останавливаться
-        if (timer != null) {
-          timer.cancel();
-          }
-        if (timer2 != null) {
-            timer2.cancel();
-        }
         // сам таймер объявляем
         timer = new CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long l) {
                 mTimerText.setText("" + l / 1000);
             }
+
             @Override
             public void onFinish() {
                 int id = 1;
@@ -109,6 +102,9 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void onClickButtonSecond(View view) {
+        if (timer2 != null) {
+            timer2.cancel();
+        }
         TextView textFirst = findViewById(R.id.text_second);
         // рандом
         int currentNumber = random.nextInt(20) + 1;
@@ -116,12 +112,6 @@ public class GameActivity extends AppCompatActivity {
 
         // условие при котором старый таймер будет останавливаться
         if (currentNumber == previousNumber2) {
-            if (timer != null) {
-                timer.cancel();
-            }
-            if (timer2 != null) {
-                timer2.cancel();
-            }
             int id = 2;
             Intent intent = new Intent(GameActivity.this, WinActivity.class);
             intent.putExtra("id", id);
@@ -132,18 +122,13 @@ public class GameActivity extends AppCompatActivity {
 
         mTimerText2 = findViewById(R.id.mTimerText2);
         // условие при котором старый таймер будет останавливаться
-        if (timer != null) {
-            timer.cancel();
-        }
-        if (timer2 != null) {
-            timer2.cancel();
-        }
         // сам таймер объявляем
         timer2 = new CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long l) {
                 mTimerText2.setText("" + l / 1000);
             }
+
             @Override
             public void onFinish() {
                 int id = 2;
