@@ -7,55 +7,40 @@
     tools:context=".GameActivity">
 
 
-    <ImageButton
-        android:id="@+id/button_circle_first"
-        android:onClick="onClickButtonFirst"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@color/transparent"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
-
-    <TextView
-        android:id="@+id/text_first"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:textSize="40dp"
-        android:fontFamily="@font/modulord"
-        android:text=""
-        android:onClick="onClickButtonFirst"
-        android:gravity="center"
-        android:rotation="-180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
-
     <TextView
         android:id="@+id/winText"
-        android:layout_width="300dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:fontFamily="@font/modulord"
         android:gravity="center"
-        android:text="text"
+        android:rotation="90"
+        android:text=""
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <ImageButton
+        android:id="@+id/reset_button"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/app_name"
+        android:onClick="onClickButtonReset"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/text_second"
-        android:layout_width="300dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:fontFamily="@font/modulord"
         android:gravity="center"
@@ -63,23 +48,54 @@
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <ImageButton
-        android:id="@+id/button_circle_second"
-        android:onClick="onClickButtonSecond"
+        android:id="@+id/button_circle_first"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="@color/transparent"
         android:contentDescription="@string/app_name"
+        android:onClick="onClickButtonFirst"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896" />
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/text_first"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/modulord"
+        android:gravity="center"
+        android:onClick="onClickButtonFirst"
+        android:rotation="-180"
+        android:text=""
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <ImageButton
+        android:id="@+id/button_circle_second"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/app_name"
+        android:onClick="onClickButtonSecond"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.903" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
