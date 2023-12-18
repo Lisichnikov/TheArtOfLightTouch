@@ -9,8 +9,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.example.theartoflighttouch.ResetFragment"
-        android:layout_width="201dp"
-        android:layout_height="104dp"
+        android:layout_width="136dp"
+        android:layout_height="248dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -76,12 +76,30 @@
         app:layout_constraintHorizontal_bias="0.844"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/pobed1"
+        android:layout_width="122dp"
+        android:layout_height="36dp"
+        android:fontFamily="@font/modulord"
+        android:gravity="center"
+        android:onClick="onClickButtonFirst"
+        android:rotation="-180"
+        android:text="Побед:"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192" />
 
     <ImageButton
         android:id="@+id/button_circle_first"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:rotation="-180"
         android:background="@color/transparent"
         android:contentDescription="@string/app_name"
         android:onClick="onClickButtonFirst"
@@ -120,7 +138,23 @@
         app:layout_constraintHorizontal_bias="0.844"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintVertical_bias="0.92" />
+
+    <TextView
+        android:id="@+id/pobed2"
+        android:layout_width="122dp"
+        android:layout_height="36dp"
+        android:fontFamily="@font/modulord"
+        android:gravity="center"
+        android:onClick="onClickButtonFirst"
+        android:text="Побед:"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.804" />
 
     <ImageButton
         android:id="@+id/button_circle_second"
