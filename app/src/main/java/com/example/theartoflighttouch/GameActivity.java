@@ -22,11 +22,17 @@ private TextView player1Text, player2Text;
 // переменная служит для проверки кто нажал на кнопку
 private boolean isPlayerTurn = true;
 private CountDownTimer turnTimer;
+private TextView firstWinCounter;
+private TextView secondWinCounter;
+private int firstCounter;
+private int secondCounter;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_game);
 
+            firstWinCounter = findViewById(R.id.counter_first);
+            secondWinCounter = findViewById(R.id.counter_second);
             player1Button = findViewById(R.id.button_circle_first);
             player2Button = findViewById(R.id.button_circle_second);
             player1Text = findViewById(R.id.text_first);
@@ -111,8 +117,12 @@ private CountDownTimer turnTimer;
             if (player1Number.equals(player2Number)) {
                 if (isPlayerTurn) {
                     replaceFragment(new SecondWinFragment());
+                    secondCounter++;
+                    secondWinCounter.setText(String.valueOf(secondCounter));
                 } else {
                     replaceFragment(new FirstWinFragment());
+                    firstCounter++;
+                    firstWinCounter.setText(String.valueOf(firstCounter));
                 }
                 player1Button.setEnabled(false);
                 player2Button.setEnabled(false);
@@ -132,8 +142,12 @@ private CountDownTimer turnTimer;
                 public void onFinish() {
                     if (isPlayerTurn) {
                         replaceFragment(new SecondWinFragment());
+                        secondCounter++;
+                        secondWinCounter.setText(String.valueOf(secondCounter));
                     } else {
                         replaceFragment(new FirstWinFragment());
+                        firstCounter++;
+                        firstWinCounter.setText(String.valueOf(firstCounter));
                     }
                     player1Button.setEnabled(false);
                     player2Button.setEnabled(false);
