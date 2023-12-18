@@ -73,8 +73,12 @@ public class GameActivity extends AppCompatActivity implements ResetFragment.OnR
 //меняет вторую кнопку на если темную полученное значение равно 1
             View root2 = findViewById(R.id.button_circle_second);
             root2.setBackgroundResource(R.drawable.circle_button_dark2);
-//меняет кнопку заново на светлую если полученное значение равно 2
-
+            player1Text.setTextColor(Color.BLACK);
+            player2Text.setTextColor(Color.BLACK);
+            firstWinCounter.setTextColor(Color.BLACK);
+            secondWinCounter.setTextColor(Color.BLACK);
+            Pobed1.setTextColor(Color.BLACK);
+            Pobed2.setTextColor(Color.BLACK);
 // меняет на темную тему если полученное значение равно 2
         } else {
 //меняет фон на темный фон если полученное значение равно 2
@@ -86,7 +90,6 @@ public class GameActivity extends AppCompatActivity implements ResetFragment.OnR
 //меняет вторую кнопку на светлую если полученное значение равно 2
             View root2 = findViewById(R.id.button_circle_second);
             root2.setBackgroundResource(R.drawable.circle_button_white2);
-//меняет кнопку заново на светлую если полученное значение равно 2
             player1Text.setTextColor(Color.WHITE);
             player2Text.setTextColor(Color.WHITE);
             firstWinCounter.setTextColor(Color.WHITE);
