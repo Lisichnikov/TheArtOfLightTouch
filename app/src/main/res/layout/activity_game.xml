@@ -6,27 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
-
-    <TextView
-        android:id="@+id/winText"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:fontFamily="@font/modulord"
-        android:gravity="center"
-        android:rotation="90"
-        android:text=""
-        android:textSize="20dp"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.theartoflighttouch.ResetFragment"
+        android:layout_width="201dp"
+        android:layout_height="104dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.502" />
 
     <ImageButton
         android:id="@+id/reset_button"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
         android:background="@color/transparent"
         android:contentDescription="@string/app_name"
         android:onClick="onClickButtonReset"
@@ -36,36 +31,18 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="53dp"
+        android:layout_height="212dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
-
-    <TextView
-        android:id="@+id/text_second"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:fontFamily="@font/modulord"
-        android:gravity="center"
-        android:text=""
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
-
-    <ImageButton
-        android:id="@+id/button_circle_first"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@color/transparent"
-        android:contentDescription="@string/app_name"
-        android:onClick="onClickButtonFirst"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
 
     <TextView
         android:id="@+id/text_first"
@@ -85,6 +62,35 @@
         app:layout_constraintVertical_bias="0.389" />
 
     <ImageButton
+        android:id="@+id/button_circle_first"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/app_name"
+        android:onClick="onClickButtonFirst"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/text_second"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/modulord"
+        android:gravity="center"
+        android:text=""
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.609" />
+
+    <ImageButton
         android:id="@+id/button_circle_second"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -96,6 +102,7 @@
         app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903" />
+        app:layout_constraintVertical_bias="0.898" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

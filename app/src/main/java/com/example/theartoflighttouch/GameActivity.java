@@ -1,6 +1,9 @@
 package com.example.theartoflighttouch;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,10 +15,10 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class GameActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity implements ResetFragment.OnResetSelectedListener{
     private static final int MIN_CLICK_INTERVAL = 5000; // В миллисекундах (5 секунд)
 private ImageButton player1Button, player2Button, resetButton;
-private TextView player1Text, player2Text, WinText;
+private TextView player1Text, player2Text;
 // переменная служит для проверки кто нажал на кнопку
 private boolean isPlayerTurn = true;
 private CountDownTimer turnTimer;
@@ -28,7 +31,7 @@ private CountDownTimer turnTimer;
             player2Button = findViewById(R.id.button_circle_second);
             player1Text = findViewById(R.id.text_first);
             player2Text = findViewById(R.id.text_second);
-            WinText = findViewById(R.id.winText);
+            // WinText = findViewById(R.id.winText);
 
             //закрепляет положение экрана в вертикальном состоянии
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -89,8 +92,8 @@ private CountDownTimer turnTimer;
                 }
             });
         }
-        public void onClickButtonReset(View view){
-            WinText.setText("");
+        public void onClickButtonReset(){
+            replaceFragment(new NothingFragment());
             player1Button.setEnabled(true);
             player2Button.setEnabled(true);
         }
@@ -107,9 +110,9 @@ private CountDownTimer turnTimer;
 
             if (player1Number.equals(player2Number)) {
                 if (isPlayerTurn) {
-                    WinText.setText("Выиграл второй игрок!");
+                    replaceFragment(new SecondWinFragment());
                 } else {
-                    WinText.setText("Выиграл первый игрок!");
+                    replaceFragment(new FirstWinFragment());
                 }
                 player1Button.setEnabled(false);
                 player2Button.setEnabled(false);
@@ -128,9 +131,9 @@ private CountDownTimer turnTimer;
                 @Override
                 public void onFinish() {
                     if (isPlayerTurn) {
-                        WinText.setText("Выиграл второй игрок!");
+                        replaceFragment(new SecondWinFragment());
                     } else {
-                        WinText.setText("Выиграл первый игрок!");
+                        replaceFragment(new FirstWinFragment());
                     }
                     player1Button.setEnabled(false);
                     player2Button.setEnabled(false);
@@ -146,5 +149,11 @@ private CountDownTimer turnTimer;
             player1Text.setText("");
             player2Text.setText("");
             isPlayerTurn = true;
+        }
+        private void replaceFragment (Fragment fragment){
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.frame,fragment);
+            fragmentTransaction.commit();
         }
     }
